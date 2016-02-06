@@ -1,0 +1,810 @@
+/* TOOLBOX */
+// --------------------------------------------
+// --------------------------------------------
+
+// -- Containers
+// -- -- Header
+// -- -- Navigation
+// -- -- Main
+// -- -- Footer
+// -- -- Personnalisation
+// -- Classes
+// -- -- Sass Classes
+// -- -- CSS Classes
+// -- Typographys
+// -- Buttons & links
+// -- -- Buttons
+// -- -- Links
+// -- Forms
+// -- -- Javascript
+// -- Tables
+// -- Codes
+// -- Colors
+// -- Plugins
+// -- -- Fancybox
+// -- -- Loader
+// -- -- Pagination
+// -- -- Slider
+// -- -- Tabs
+// -- -- Testimonial
+// -- Others modules
+
+
+/* -- CONTAINERS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- HEADER */
+// --------------------------------------------
+#page-header {
+	position: absolute;
+	top: 0;
+	z-index: $zindex-navbar-fixed;
+	width: 100%;
+	padding: 20px 0;
+	@extend %clearfix; 
+	
+	& svg {
+		height: 40px;
+		width: 40px;
+	}
+	
+	& .header-logo {
+		font-size: 0;
+		float: left;
+		display: block;
+	}
+}
+
+/* ---- NAVIGATION */
+// --------------------------------------------
+/* ------ Navigation Main */
+// --------------------------------------------
+#page-header nav {
+	& ul {
+		@extend %list-inline;
+		
+		& li {
+			line-height: 20px;
+			@include rem(13);
+			padding: 5px 2px;
+		}
+		
+		& a {
+			text-decoration: none;
+			color: #FFF;
+			display: block;
+			padding: 5px 10px;
+			background: transparent;
+			position: relative;
+			
+			&:before {
+				content: '';
+				border-top: 2px solid #FFF;
+				right: 5px;
+				bottom: -10px;
+				left: 5px;
+				display: none;
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				transition: $transition-base;
+			}
+			
+			&:hover:before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	
+	@media (max-width: $screen-sm-max) {
+		display: none;
+	}
+}
+
+// Animation effect on hover 
+#page-header nav {
+	position: relative;
+	
+	& .animated-line {
+		display: block;
+		height: 2px;
+		background: $brand-color-8;
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		transition: .4s ease-in-out all;
+	}
+	
+	&:hover .animated-line {
+		background: #FFF;
+	}
+}
+
+/* ------ Navigation Clone */
+// --------------------------------------------
+.navigation-clone-container {
+	display: none;
+	
+	@media (max-width: $screen-sm-max) {
+		display: block;
+		position: fixed;
+		right: 15px;
+		z-index: $zindex-navbar + 95;
+		height: 40px;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+		transition: $transition-base;
+		box-shadow: 0 0 30px rgba($brand-color-8, 0.1);
+		
+		& > div {
+			padding: 10px 15px 20px 15px;
+			background: #FFF;
+			width: 120px;
+		}
+		
+		& ul {
+			@extend %list-unstyled;
+			line-height: 1;
+			
+			& li {
+				padding: 3px 0;
+				text-align: center;
+			}
+		}
+		
+		& a {
+			text-decoration: none;
+			@include rem(14);
+			
+			&:hover {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+
+@media (max-width: $screen-sm-max) {
+	.navigation-open .navigation-clone-container  {
+		height: 250px;
+		opacity: 1;
+		visibility: visible;
+	}	
+}
+
+
+
+/* ------ Navigation BUTTON */
+// --------------------------------------------
+.navigation-button {
+	display: none;
+	position: fixed;
+	top: 20px;
+	right: 15px;
+	height: 40px;
+	width: 40px;
+	border: 2px solid #FFF;
+	border-radius: 50%;
+	z-index: $zindex-navbar + 100;
+	transition: $transition-base;
+	background: $brand-color-6;
+	box-shadow: 0 0 30px rgba($brand-color-8, 0.1);
+	
+	& span {
+		display: block;
+		position: absolute;
+		width: 50%;
+		height: 2px;
+		border-radius: 2px;
+		background: #FFF;
+		left: 50%;
+		margin-left: -25%;
+		top: 50%;
+		transition: $transition-base;
+
+		&.ln1 {
+			margin-top: -7px;
+		}
+
+		&.ln2 {
+			margin-top: -1px;
+			width: 40%;
+			margin-left: -20%;
+		}
+
+		&.ln3 {
+			margin-top: 5px;
+		}
+	}
+		
+	// HOVER
+	&:hover {
+		cursor: pointer;
+		background: #FFF;
+	
+		& span {
+			background: $brand-color-5;
+
+			&.ln1 {
+				animation: navigation-button-ln1 1 .8s;
+				animation-fill-mode: forwards;
+			}
+
+			&.ln2 {
+				animation: navigation-button-ln2 1 .8s;
+				animation-fill-mode: forwards;
+			}
+
+			&.ln3 {
+				animation: navigation-button-ln3 1 .8s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+	
+	@media (max-width: $screen-sm-max) {
+		display: block;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.navigation-open .navigation-button {
+		top: 230px;
+		right: 50px;
+		background: #FFF;
+
+		& span {
+			background: $brand-color-5;
+		}
+	
+		& span {
+			background: $brand-color-5;
+
+			&.ln1 {
+				animation: navigation-button-open-ln1 1 .8s;
+				animation-fill-mode: forwards;
+			}
+
+			&.ln2 {
+				animation: navigation-button-open-ln2 1 .8s;
+				animation-fill-mode: forwards;
+			}
+
+			&.ln3 {
+				animation: navigation-button-open-ln3 1 .8s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+}
+
+
+	
+@keyframes navigation-button-ln1 {
+	50% {
+		margin-top: -1px;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(90deg);
+		margin-top: -1px;
+	}
+}
+
+@keyframes navigation-button-ln2 {
+	50%, 100% {
+		opacity: 0;
+	}
+}
+
+@keyframes navigation-button-ln3 {
+	50% {
+		margin-top: -1px;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+		margin-top: -1px;
+	}
+}
+
+	
+@keyframes navigation-button-open-ln1 {
+	50% {
+		margin-top: -1px;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(45deg);
+		margin-top: -1px;
+	}
+}
+
+@keyframes navigation-button-open-ln2 {
+	50%, 100% {
+		opacity: 0;
+	}
+}
+
+@keyframes navigation-button-open-ln3 {
+	50% {
+		margin-top: -1px;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(-45deg);
+		margin-top: -1px;
+	}
+}
+
+/* ---- MAIN */
+// --------------------------------------------
+#page-main {
+	margin-bottom: 50px;
+}
+
+/* ---- FOOTER */
+// --------------------------------------------
+
+/* ---- PERSONNALISATION */
+// --------------------------------------------
+
+
+/* -- CLASSES */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- SASS CLASSES */
+// --------------------------------------------
+%box-shadow { box-shadow: 2px 2px 10px rgba($brand-color-3, 0.4);}
+
+@mixin box-shadow-toolbox($shadow-color) { 
+	box-shadow: 2px 2px 10px rgba($shadow-color, 0.4);
+}
+
+/* ---- CSS CLASSES */
+// --------------------------------------------
+/* For group of image */
+// ---------------------
+.image-group {
+	margin: -2px;
+	padding-top: 10px;
+	
+	& a {
+		font-size: 0;
+		line-height: 0;
+		display: block;
+		outline: 1px solid rgba($brand-color-5, 0);
+	}
+	
+	& a:hover {
+		outline: 1px solid $brand-color-5;
+	}
+	
+	& li {
+		padding: 2px;
+	}	
+	
+	&-sm {
+		& a, & img {
+			height: 60px;
+		}
+	}
+}
+
+/* -- TYPOGRAPHYS */
+// --------------------------------------------
+// --------------------------------------------
+p { color: lighten($brand-color-4, 15%);}
+
+// Main usage : Section title
+// --------------------------
+.main-section-title {
+	margin-top: 80px;
+	text-transform: uppercase;
+	color: $brand-color-7;
+}
+
+// Main usage : Article title
+// --------------------------
+.sub-section-title {
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: $brand-color-8;
+	text-transform: uppercase;
+	margin-top: 30px;
+	
+	@include rem(20);
+	
+	& small {
+		white-space: nowrap;
+	}
+	
+	& .code-sample {
+		color: $brand-color-3;
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		text-decoration: none;
+		
+		& i:before {
+			content: '</>';
+			font-family: $font-family-monospace;
+			transform: scaleX(0.5);
+			display: block;
+		}
+	}
+	
+	& .code-sample[href=""] {
+		display: none;
+	}
+	
+	&:hover .code-sample {
+		color: $brand-color-5;
+	}
+}
+
+/* -- BUTTONS & LINKS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- BUTTONS */
+// --------------------------------------------
+
+
+/* ---- LINKS */
+// --------------------------------------------
+
+
+/* -- FORMS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- SELECT */
+// --------------------------------------------
+
+
+/* -- TABLES */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- CODES */
+// --------------------------------------------
+// --------------------------------------------
+.code {
+	&, & pre, & code {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/* -- COLORS */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- PLUGINS */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* ---- FANCYBOX */
+// --------------------------------------------
+.exemple {
+	padding: 30px;
+	@include rem(15px);
+	
+	& h1 {
+		margin-top: 0;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $brand-color-5;
+		font-weight: 500;
+		font-family: $brand-font-1;
+		color: $brand-color-8;
+		
+		@include rem(15px);
+	}
+	
+	& h2 {
+		display: none;
+	}
+	
+	& figure {
+		padding: 10px;
+	}
+}
+
+/* ---- LOADER */
+// -----------------------
+.loader-container {
+	width: 25%;
+	float: left;
+	padding-top: 10px;
+}
+
+.loader {
+	&.pulse {
+		@include loader(pulse, $brand-color-5);
+	}
+
+	&.spinning-dots {
+		@include loader(spinning-dots, $brand-color-5, 40px, 2s);
+	}
+
+	&.pendulum {
+		@include loader(heartbeat, $brand-color-5, 20px, 0.6s);
+		top: 10px;
+	}
+
+	&.filling-bars {
+		@include loader(filling-bars, $brand-color-5, 60px, 2s);
+		top: 10px;
+	}
+}
+
+/* ---- PAGINATION */
+// --------------------------------------------
+
+
+/* ---- SLIDER */
+// --------------------------------------------
+
+
+/* ---- TABS */
+// --------------------------------------------
+
+
+/* -- OTHERS MODULES */
+// --------------------------------------------
+// --------------------------------------------
+
+/* SECTION - Header */
+// -------------------
+.hgroup[role="rowheader"] {
+	background: $brand-color-6;
+  @include linear-gradient(to right bottom, $brand-color-5, $brand-color-7);
+	position: relative;
+}
+
+.page-title-image {
+	background-image: url(https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1ef93eb805f94751678a846c6707e470);
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(1);
+	opacity: 0.1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.page-title-container {
+	
+	color: #FFF;
+	padding: 180px 0 200px 0;
+	position: relative;
+	
+	& h1 {
+		text-transform: uppercase;
+	}
+	
+	& .page-subtitle {
+		font-family: $brand-font-1;
+		@include rem(20);
+		border-left: 5px solid $brand-color-7;
+		padding-left: 30px;
+		margin-left: 15px;
+	}
+	
+	& .button-begin {
+		display: block;
+		text-decoration: none;
+		transform: rotate(90deg);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		color: #FFF;
+		background: none;
+		border: #FFF solid 1px;
+		position: absolute;
+		left: 50%;
+		margin-left: -20px;
+		bottom: 60px;
+		transition: $transition-base;
+		animation: button-begin 5s infinite ease-in-out;
+	
+		&:before {
+			content: '\203A';
+			@include rem(30);
+			position: absolute;
+			left: 50%; margin-left: -4px;
+			top: 50%; margin-top: -24px;
+		}
+		
+		&:hover {
+			color: $brand-color-6;
+			background-color: #FFF;
+		}
+		
+		@keyframes button-begin {
+			0%, 100% {
+				bottom: 60px;
+			}
+			
+			50% {
+				bottom: 30px;
+			}
+		}
+	}
+}
+
+/* SECTION - Colors */
+// -------------------
+.color-palet {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 80px;
+	
+	& + .color-palet {
+		margin-left: 10px;
+	}
+		
+	& .color-visible {
+		overflow: hidden;
+
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		width: 80px;
+
+		border-radius : 50%;
+		border-bottom-width: 2px;
+		transition: $transition-base;
+		
+		width: 80px;
+		height: 80px;
+		position: relative;
+	}
+	
+	& .color-neutral-1 { 
+		background: $brand-color-1; 
+		
+		&:hover {
+			@include box-shadow-toolbox(lighten($brand-color-4, 20%))
+		}
+	}
+	
+	& .color-neutral-2 { 
+		background: $brand-color-2;  
+		
+		&:hover {
+			@include box-shadow-toolbox(lighten($brand-color-4, 10%))
+		}
+	}
+	
+	& .color-neutral-3 { 
+		background: $brand-color-3;  
+		
+		&:hover {
+			@include box-shadow-toolbox($brand-color-4)
+		}
+	}
+	
+	& .color-neutral-4 { 
+		background: $brand-color-4;  
+		
+		&:hover {
+			@include box-shadow-toolbox(darken($brand-color-4, 100%))
+		}
+	}
+
+	
+	& .color-primary-1 { 
+		background: $brand-color-5;  
+		
+		&:hover {
+			@include box-shadow-toolbox(darken($brand-color-4, 100%))
+		}
+	}
+	
+	& .color-primary-2 { 
+		background: $brand-color-6;  
+		
+		&:hover {
+			@include box-shadow-toolbox(darken($brand-color-4, 100%))
+		}
+	}
+	
+	& .color-primary-3 { 
+		background: $brand-color-7;  
+		
+		&:hover {
+			@include box-shadow-toolbox(darken($brand-color-4, 100%))
+		}
+	}
+	
+	& .color-primary-4 { 
+		background: $brand-color-8;  
+		
+		&:hover {
+			@include box-shadow-toolbox(darken($brand-color-4, 100%))
+		}
+	}
+}
+
+/* SECTION - Grid */
+// -----------------
+.grid-visible {
+	& .row + .row {
+		margin-top: 10px;
+	}
+	
+	& div[class^=col] {
+		background: $brand-color-1;
+		border: 1px solid $brand-color-2;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		@include rem(11);
+	}
+}
+
+/* SECTION - Typography */
+// -----------------------
+.font-show {	
+	&.font-family-1 .font-sample,
+	&.font-family-1 .font-range {
+		font-family: $brand-font-1;
+	}
+	
+	&.font-family-2 .font-sample,
+	&.font-family-2 .font-range {
+		font-family: $brand-font-2;
+	}
+
+	& .font-range {
+		@include rem(18);
+	}
+
+	& .font-sample-container {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		margin-top: 20px;
+		padding: 10px;
+
+		border-radius : 3px;
+		border: solid 1px $brand-color-1;
+		border-bottom-width: 2px;	
+		text-align: center;
+		line-height: 1;
+		transition: $transition-base;
+
+		@include rem(60);
+
+		& + .font-sample-container {
+			margin-left: 10px;
+		}
+
+		& span {
+			@include rem(12);
+			display: block;
+			margin-top: 10px;
+			padding-top: 15px;
+			border-top: 1px solid $brand-color-2;
+		}
+		
+		&:hover {
+			@extend %box-shadow;
+		}
+	}
+}

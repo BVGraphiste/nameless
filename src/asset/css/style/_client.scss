@@ -1,0 +1,544 @@
+/* TOOLBOX */
+// --------------------------------------------
+// --------------------------------------------
+
+// -- Containers
+// -- -- Header
+// -- -- Navigation
+// -- -- Main
+// -- -- Footer
+// -- -- Personnalisation
+// -- Classes
+// -- -- Sass Classes
+// -- -- CSS Classes
+// -- Typographys
+// -- Buttons & links
+// -- -- Buttons
+// -- -- Links
+// -- Forms
+// -- -- Javascript
+// -- Tables
+// -- Codes
+// -- Colors
+// -- Plugins
+// -- -- Fancybox
+// -- -- Loader
+// -- -- Pagination
+// -- -- Slider
+// -- -- Tabs
+// -- -- Testimonial
+// -- Others modules
+
+
+/* -- CONTAINERS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- HEADER */
+// --------------------------------------------
+
+/* ---- NAVIGATION */
+// --------------------------------------------
+
+/* ---- MAIN */
+// --------------------------------------------
+
+/* ---- FOOTER */
+// --------------------------------------------
+
+/* ---- PERSONNALISATION */
+// --------------------------------------------
+
+
+/* -- CLASSES */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- SASS CLASSES */
+// --------------------------------------------
+
+/* ---- CSS CLASSES */
+// --------------------------------------------
+
+/* -- TYPOGRAPHYS */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- BUTTONS & LINKS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- BUTTONS */
+// --------------------------------------------
+
+
+/* ---- LINKS */
+// --------------------------------------------
+
+
+/* -- FORMS */
+// --------------------------------------------
+// --------------------------------------------
+
+/* ---- SELECT */
+// --------------------------------------------
+/* SELECT CAPTION & PLACEHOLDERS */
+// --------------------------------
+.select-caption {
+	padding-right: 30px;
+}
+
+.select-caption:before,
+.select-caption:after {
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: scaleX(1.2);
+}
+
+.select-caption:before {
+	border-top: 5px solid $brand-color-4;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+
+.select-caption:after {
+	border-top: 5px solid #FFF;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	margin-top: -2px;
+}
+
+.select-container.open{
+	& .select-caption:before {
+		transform: rotate(180deg);
+	}
+
+	& .select-caption:after {
+		transform: rotate(180deg);
+		margin-top: 2px;
+	}
+}
+
+
+/* SELECT OPTIONS */
+// -----------------
+.select-options {
+	margin-top: 10px;
+	
+	& .options li + li {
+		border-top: 1px solid $brand-color-1;
+	}
+	
+	& .options li.selected {
+		font-weight: bold;
+	}
+	
+	& .options li.selected.disabled {
+		font-weight: normal;
+	}
+}
+
+.open .select-options {
+	margin-top: -1px;
+}
+
+/* -- TABLES */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- CODES */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- COLORS */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* -- PLUGINS */
+// --------------------------------------------
+// --------------------------------------------
+
+
+/* ---- FANCYBOX */
+// --------------------------------------------
+.fancybox {
+	&-item {
+		padding: 10px;
+	}
+	
+	&-close {
+		top: 10px;
+		right: 10px;
+	}
+	
+	&-next {
+		top: 50%;
+		right: 10px;
+		margin-top: -10px;
+	}
+	
+	&-prev {
+		top: 50%;
+		left: 10px;
+		margin-top: -10px;
+	}
+}
+
+
+/* ---- LOADER */
+// -----------------------
+
+
+/* ---- PAGINATION */
+// --------------------------------------------
+.pagination {	
+	& .page-numbers {
+		border: 1px solid $brand-color-2;
+		text-decoration: none;
+	}
+	
+	& .page-numbers + .page-numbers {
+		border-left: 0;
+	}
+	
+	& .prev {
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	
+	& .next {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+	
+	& .current {
+		background: $brand-color-5 !important;
+		border: 1px solid $brand-color-5;
+		color: #FFF;
+	}
+	
+	& .dots:hover {
+		background: none;
+	}
+}
+
+
+/* ---- SLIDER */
+// --------------------------------------------
+.slider-multiple {
+	display: block;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	
+	& .slider-wrapper-outer {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	& .slider-item {
+		
+		& a {
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		
+		& img {
+			max-width: 100%;
+			max-height: 100%;
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+		}
+	}
+	
+	& .slider-buttons {
+		& .slider-prev, 
+		& .slider-next {
+			position: absolute;
+			top: 50%;
+			margin-top: -22px;
+			overflow: hidden;
+			color: $brand-color-5;
+			font-weight: bold;
+			
+			& span {
+				display: none;
+			}
+			
+			&:before {
+				font-size: 25px;
+				display: block;
+				padding: 10px;
+				margin-top: -8px;
+			}
+			
+			&:hover {
+				color: $brand-color-8;
+			}
+		}
+		
+		& .slider-prev {
+			right: 100%;
+			
+			&:before {
+				content: $lsaquo-sign;
+			}
+		}
+		
+		& .slider-next {
+			left: 100%;
+			
+			&:before {
+				content: $rsaquo-sign;
+			}
+		}
+	}
+}
+
+/* ---- TABS */
+// --------------------------------------------
+/* TABS NAVIGATION */
+// ------------------
+.ui-tabs-nav {
+		margin-bottom: -1px;
+	
+	& li[aria-selected=false] {
+		border: 1px solid $brand-color-1;
+		border-bottom-color: $brand-color-2;
+		border-right: 0;
+		background: $brand-color-1;
+	}
+	
+	& li[aria-selected=false] a {
+		color: $brand-color-3;
+	}
+	
+	// ACTIVE
+	& li[aria-selected=true] {
+		border: 1px solid $brand-color-2;
+		position: relative;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			background: #FFF;
+			height: 2px;
+			top: 100%;
+			right: 0;
+			left: 0;
+		}
+		
+		& a {
+			border-color: $brand-color-2;
+		}
+	}
+	
+	& li[aria-selected=true] + li {
+		border-left: 0;
+	}
+}
+
+/* TABS CONTENT */
+// ---------------
+.ui-tabs-panel {
+	border: 1px solid $brand-color-2;
+}
+
+/* ---- TESTIMONIAL */
+// --------------------------------------------
+.testimonial {
+	$testimonial-nav-image-size: 60px;
+	$testimonial-panels-image-size: 80px;
+	
+	position: relative;
+	margin-bottom: 20px;
+	
+	@extend %clearfix;
+	
+	/* Navigation */
+	// -------------
+	& .testimonial-navigation {
+		float: right;
+		width: 35%;
+		margin-left: -10px;
+		margin-right: -10px;
+		text-align: right;
+		
+		& li {
+			padding: 10px;
+			background: none;
+			border: 0;
+			
+			&:before { display: none;}
+		}
+		
+		& a {
+			padding: 0;
+			border-radius: 50%;
+			overflow: hidden;
+			
+			width: $testimonial-nav-image-size;
+			height: $testimonial-nav-image-size;
+		}
+		
+		& img {
+			width: $testimonial-nav-image-size;
+			height: $testimonial-nav-image-size;
+		}
+		
+		/* Transition for states */
+		// ------------------------
+		& li a {
+			filter: grayscale(100%);
+			transition: $transition-base;
+		}
+		
+		& li.ui-state-hover a {
+			filter: grayscale(30%);
+		}
+		
+		& li.ui-state-active a {
+			filter: grayscale(0%);
+		}
+	}
+	
+	/* Panels */
+	// ---------
+	& .testimonial-panels {
+		float: left;
+		width: 65%;
+		position: relative;
+		
+		& .testimonial-pict,
+		& .testimonial-pict img {
+			width: $testimonial-panels-image-size;
+			height: $testimonial-panels-image-size;
+		}
+		
+		& .testimonial-pict {
+			border-radius: 50%;
+			overflow: hidden;
+			position: absolute;
+			left: -($testimonial-panels-image-size / 2);
+			top: 20px;
+			border: 1px solid $brand-color-2;
+		}
+		
+		/* Animation when open */
+		// ----------------------
+		& [aria-hidden=false] {
+			animation: animation-testimonials 1.3s 1;
+			
+			& .testimonial-text-content h4,
+			& .testimonial-text-content .web-text,
+			& .testimonial-text-content .testimonial-meta {
+				position: relative;
+			}
+			
+			& .testimonial-text-content h4 {
+				animation: animation-testimonials-title 1.3s 1;
+			}
+			
+			& .testimonial-text-content .web-text {
+				animation: animation-testimonials-text 1.5s 1;
+			}
+			
+			& .testimonial-text-content .testimonial-meta {
+				animation: animation-testimonials-meta 1.7s 1;
+			}
+		}
+	}
+	
+	& .ui-tabs-panel {
+		background: #FFF;
+		padding: 0;
+	}
+}
+
+/* ---- CONTENT */
+// --------------------------------------------
+.testimonial-text-content {
+	padding: 30px 30px 20px 60px; 
+	
+	& h4 {
+		text-transform: uppercase;
+		color: $brand-color-5;
+		font-weight: 300;
+		font-family: $font-family-sans-serif;
+	}
+}
+
+/* Meta */
+// -------
+.testimonial-meta {
+	font-size: 0.8em;
+	padding-top: 1.2em;
+	
+	& span {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+	}
+	
+	& .testimonial-name {
+		color: $brand-color-5;
+		font-weight: bold;
+		text-transform: uppercase;
+		
+		&:after {
+			content: ',';
+			color: $brand-color-4;
+			font-weight: 300;
+		}
+	}
+	
+	& .testimonial-town {
+		color: $brand-color-4;
+	}
+	
+	& .testimonial-date {
+		float: right;
+		color: $brand-color-3;
+	}
+}
+
+/* ---- ANIMATIONS */
+// --------------------------------------------	
+@keyframes animation-testimonials {
+	0% { opacity: 0;}
+	10% { opacity: 0;}
+	100% { opacity: 1;}
+}
+	
+@keyframes animation-testimonials-title {
+	0% { opacity: 0;}
+	20% { opacity: 0; left: -20px;}
+	100% { opacity: 1; left: 0;}
+}
+	
+@keyframes animation-testimonials-text {
+	0% { opacity: 0;}
+	35% { opacity: 0; left: -20px;}
+	100% { opacity: 1; left: 0;}
+}
+	
+@keyframes animation-testimonials-meta {
+	0% { opacity: 0;}
+	50% { opacity: 0; left: -20px;}
+	100% { opacity: 1; left: 0;}
+}
+
+/* -- OTHERS MODULES */
+// --------------------------------------------
+// --------------------------------------------

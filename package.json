@@ -1,0 +1,39 @@
+{
+  "name": "Nameless",
+  "version": "2.0.1",
+  "description": "Nameless is a frameworks scss and javascript for website.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vddbertrand/Nameless"
+  },
+  "keywords": [
+    "nameless",
+    "sass",
+    "css",
+    "javascript"
+  ],
+  "author": "Vanderdonckt Bertrand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vddbertrand/Nameless/issues"
+  },
+  "homepage": "https://github.com/Vddbertrand/Nameless",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-plumber": "latest",
+    "gulp-real-favicon": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "yargs": "latest"
+  }
+}

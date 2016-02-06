@@ -1,0 +1,47 @@
+/* TABS */
+// --------------------------------------------
+
+/* -- TABS NAVIGATION */
+// --------------------------------------------
+
+.tabs[data-tabs-nav="inline"] {
+	.ui-tabs-nav {
+		// RESET
+		list-style-type: none;
+		padding-left: 0;
+		font-size: 0;
+
+		& li {
+			@include rem($font-size-base);
+
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+		}		
+	}
+}
+
+.ui-tabs-nav {
+	& li a {
+		text-decoration: none;
+		display: block;
+		padding: $tabs-nav-padding;
+		color: $tabs-nav-color;
+	} 
+	
+	// ACTIVE
+	& li.ui-state-active {
+		& a {
+			color: $tabs-nav-active-color;
+		}
+	}
+}
+
+
+/* -- TABS CONTENT */
+// --------------------------------------------
+
+.ui-tabs-panel {
+	padding: $tabs-panel-padding;
+	color: $tabs-panel-color;
+}

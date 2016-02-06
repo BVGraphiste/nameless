@@ -1,0 +1,26 @@
+// POPUP
+// --------------------------------------------
+
+@mixin popup($opener) {
+	position: relative;
+	
+	& > * + * {
+		position: absolute;
+		display: none;
+		z-index: 1010;
+	}
+	
+	@if ($opener == "hover"){
+		&:hover > * + * {
+			display: block;
+		}
+	}
+	
+	@if ($opener == "click"){
+		cursor: pointer;
+		
+		&.open > * + * {
+			display: block;
+		}
+	}
+}

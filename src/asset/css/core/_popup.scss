@@ -1,0 +1,45 @@
+/* POPUP */
+// --------------------------------------------
+
+.popup,
+.popup[data-popup-opening="hover"] {
+	@include popup(hover);
+}
+
+.popup[data-popup-opening="click"] {
+	@include popup(click);
+}
+
+
+/* -- SHARED STYLES */
+// --------------------------------------------
+
+.popup {	
+	& > * + * {
+		background: $popup-bg;
+	}
+	
+	// POSITION
+	& [data-position~="top"] 
+	& [data-position~="right"] 
+	& [data-position~="bottom"] 
+	& [data-position~="left"] {
+		position: absolute;
+	}
+	
+	& [data-position~="top"] {
+		bottom: 100%;
+	}
+	
+	& [data-position~="right"] {
+		left: 100%;
+	}
+	
+	& [data-position~="bottom"] {
+		top: 100%;
+	}
+	
+	& [data-position~="left"] {
+		right: 100%;
+	}
+}

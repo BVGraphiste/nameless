@@ -1,0 +1,33 @@
+/* ISOTOP */
+// --------------------------------------------
+
+.isotope {
+	& button {
+		background: none;
+		border: none;
+	}
+}
+
+
+/* -- MANSORY */
+// --------------------------------------------
+
+.masonry {
+	font-size: 0;
+	margin-left: -$mansory-grid-item-padding;
+	margin-right: -$mansory-grid-item-padding;
+	
+	& .grid-item {
+		width: 100% / $mansory-grid-item-width;
+		padding: $mansory-grid-item-padding;
+		
+		& > a {
+			display: block;
+		}
+	}
+	
+	& img {
+		max-width: 100%;
+		display: block;
+	}
+}

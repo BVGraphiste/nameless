@@ -1,0 +1,38 @@
+// GRID GENERATOR
+// --------------------------------------------
+
+@mixin make-grid-columns($size, $i: 1, $list: ".col-md-#{$i}") {	
+	@for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-md-#{$i}";
+  }
+	
+	// Class content
+  #{$list} {
+		@if ($size == "md")  { 
+			display: inline-block; *display: inline; *zoom: 1;
+			font-size: $font-size-base;
+		}
+		
+		@if ($size == "xs") { 
+			width: 100%; 
+		}
+		
+		vertical-align: top;
+  
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+}
+
+// --
+
+@mixin grid-column($size) {
+	@include make-grid-columns($size);
+	
+	// Width
+	@for $i from (1) through $grid-columns {
+		.col-#{$size}-#{$i} {
+			width: ((100% / $grid-columns) * $i);
+		}
+	}
+}

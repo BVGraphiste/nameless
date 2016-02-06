@@ -1,0 +1,46 @@
+/* BUTTONS */
+// --------------------------------------------
+
+/* -- CLASSIC */
+// --------------------------------------------
+
+.button {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	
+	width: auto;
+	
+	background: $btn-default-bg;
+	border: $btn-default-border;
+	color: $btn-default-color;
+	
+	font-weight: $btn-font-weight;
+	text-transform: $btn-text-transform;
+	text-decoration: none;
+	
+	border-radius: $btn-default-radius;
+	padding: $btn-default-padding;
+	
+	transition: $transition-base;
+	
+	&:hover {
+		background: $btn-hover-bg;
+		color: $btn-hover-color;
+	}
+}
+
+
+/* -- OUTLINE */
+// --------------------------------------------
+
+.button-outline {
+	background: $btn-outline-bg;
+	border: $btn-outline-border;
+	color: $btn-outline-color;
+	
+	&:hover {
+		background: $btn-outline-hover-bg;
+		color: $btn-outline-hover-color;
+	}
+}

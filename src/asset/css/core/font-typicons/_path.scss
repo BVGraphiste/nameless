@@ -1,0 +1,13 @@
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'typicons';
+  src: url('#{$icon-font-path}/fonts-typicons/typicons-webfont.eot');
+  src: url('#{$icon-font-path}/fonts-typicons/typicons-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$icon-font-path}/fonts-typicons/typicons-webfont.woff') format('woff'),
+       url('#{$icon-font-path}/fonts-typicons/typicons-webfont.ttf') format('truetype'),
+       url('#{$icon-font-path}/fonts-typicons/typicons-webfont.svg#typicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

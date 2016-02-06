@@ -1,0 +1,49 @@
+/* PRETTIFY */
+// --------------------------------------------
+
+pre.prettyprint {
+	border: none !important;
+}
+
+
+/* -- HTML */
+// --------------------------------------------
+
+.language-html {
+	color: $text-color;
+	
+	& .atn, 
+	& .pun {
+		color: $color-success;
+	}
+	
+	& .atv {
+		color: $color-warning;
+		font-style: italic;
+	}
+	
+	.com {
+		color: $gray-light;
+		font-style: italic;
+	}
+}
+
+
+/* -- JAVASCRIPT */
+// --------------------------------------------
+
+.language-js {
+	color: $text-color;
+	
+	& .str {
+		color: $color-warning;
+		font-style: italic;
+	}
+	
+	& .kwd {
+		color: $color-info;
+	}
+	
+	& .typ {
+	}
+}

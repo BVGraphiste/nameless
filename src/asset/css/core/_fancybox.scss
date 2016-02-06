@@ -1,0 +1,180 @@
+/* FANCYBOX */
+// --------------------------------------------
+
+/* -- CORE */
+// --------------------------------------------
+
+.fancybox {
+	&-wrap,
+	&-skin,
+	&-outer,
+	&-inner,
+	&-image,
+	&-wrap iframe,
+	&-wrap object,
+	&-nav,
+	&-nav span,
+	&-tmp {
+		padding: 0;
+		margin: 0;
+		border: 0;
+		outline: none;
+		vertical-align: top;
+	}
+}
+
+.fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #FFF;
+	
+	&.fancybox-type-image {
+		background: none;
+	}
+}
+
+.fancybox-inner {
+	overflow: hidden;
+}
+
+.fancybox-type-iframe .fancybox-inner {
+	-webkit-overflow-scrolling: touch;
+}
+
+.fancybox-image, 
+.fancybox-iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.fancybox-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.fancybox-item {
+	position: $fancybox-buttons-position;
+}
+
+
+/* -- POSITION (Z-INDEX) */
+// --------------------------------------------
+
+.fancybox {
+	&-overlay { z-index: $zindex-modal-background; }
+
+	&-wrap { z-index: $zindex-modal; }
+
+	&-opened { z-index: $zindex-modal + 10; }
+
+	&-close,
+	&-nav,
+	&-nav span { z-index: $zindex-modal + 20; }
+
+	&-title,
+	&-title-float-wrap { z-index: $zindex-modal + 30; }
+
+	&-loading { z-index: $zindex-modal + 40; }
+}
+
+
+/* -- ERROR */
+// --------------------------------------------
+
+.fancybox-error {
+	margin: 0;
+	white-space: nowrap;
+	background: #FFF;
+}
+
+
+/* -- LOADING */
+// --------------------------------------------
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -($fancybox-loader-size / 2);
+	margin-left: -($fancybox-loader-size / 2);
+
+	& div {
+		@include loader(spinning-dots, $fancybox-loader-bg, $fancybox-loader-size, 1s);
+	}
+}
+
+
+/* -- BUTTONS */
+// --------------------------------------------
+
+.fancybox-item {
+	background: $fancybox-nav-bg;
+	color: $fancybox-nav-color;
+
+	&:hover {
+		background: $fancybox-nav-bg;
+		color: $fancybox-nav-color;
+	}
+}
+
+
+/* -- OVERLAY */
+// --------------------------------------------
+// Overlay helper
+.fancybox-lock {
+	overflow: hidden !important;
+	width: auto;
+
+	&-test {
+		overflow-y: hidden !important;
+	}
+
+	& body {
+		overflow: hidden !important;
+	}
+}
+
+.fancybox-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	background: rgba($fancybox-overlay-color, $fancybox-overlay-opacity);
+
+	&-fixed {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.fancybox-lock .fancybox-overlay {
+	overflow: auto;
+	overflow-y: scroll;
+}
+
+
+/* -- TITLE */
+// --------------------------------------------
+
+.fancybox-title {
+	visibility: hidden;
+	position: relative;
+	text-shadow: none;
+}
+
+.fancybox-opened .fancybox-title {
+	visibility: visible;
+}
+
+.fancybox-title-outside-wrap {
+	position: relative;
+}
+
+.fancybox-title-over-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}

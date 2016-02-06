@@ -1,0 +1,17 @@
+// Core
+@import "variables";
+@import "mixins";
+@import "path";
+@import "core";
+
+// Otions
+@if $fa-option-larger == true          { @import "larger";}
+@if $fa-option-fixed-width == true     { @import "fixed-width";}
+@if $fa-option-list == true            { @import "list";}
+@if $fa-option-bordered-pulled == true { @import "bordered-pulled";}
+@if $fa-option-animated == true        { @import "animated";}
+@if $fa-option-rotated-flipped == true { @import "rotated-flipped";}
+@if $fa-option-stacked == true         { @import "stacked";}
+
+// Icons
+@import "icons";

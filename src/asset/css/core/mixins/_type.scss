@@ -1,0 +1,36 @@
+// SET FONT SIZE IN REM
+// --------------------------------------------
+
+@mixin rem($size) {
+	$value-1: ($size / ($size * 0 + 1)); // delete unite hack
+	$value-2: ($font-size-base / ($font-size-base * 0 + 1)); // delete unite hack
+		
+	font-size: #{$value-1}px !important;
+	font-size: ($value-1 / $value-2) * 1rem !important;
+}
+
+/*
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+*/
+
+// FONT-SIZE HELPER (GENERATE CLASS)
+// --------------------------------------------
+
+@mixin font-size-helper($font-size-helper-range-min, $font-size-helper-range-max) {
+	// Width
+	@for $i from ($font-size-helper-range-min) through $font-size-helper-range-max {
+		.fz-#{$i} {
+			@include rem($i);
+		}
+	}
+}

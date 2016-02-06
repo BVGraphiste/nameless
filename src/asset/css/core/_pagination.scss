@@ -1,0 +1,20 @@
+/* PAGINATION */
+// --------------------------------------------
+
+.pagination {
+	font-size: 0;
+	
+	& .page-numbers {
+		@include rem($font-size-base);
+		
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		
+		padding: $pagination-link-padding;
+		
+		&:hover {
+			background: $pagination-link-hover-bg;
+		}
+	}
+}

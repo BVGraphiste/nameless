@@ -1,0 +1,21 @@
+/* DROPDOWN */
+// --------------------------------------------
+
+.dropdown,
+.dropdown[data-dropdown-opening="hover"] {
+	@include popup(hover);
+}
+
+.dropdown[data-dropdown-opening="click"] {
+	@include popup(click);
+}
+
+
+/* -- SHARED STYLES */
+// --------------------------------------------
+
+.dropdown {	
+	& > * + * {
+		background: $dropdown-bg;
+	}
+}

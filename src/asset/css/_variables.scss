@@ -1,0 +1,402 @@
+// CORE OPTIONS
+// --------------------------------------------
+// -- Reset
+$core-option-reset:             true !default;
+
+// -- Content
+$core-option-type:              true !default;
+$core-option-forms:             true !default;
+$core-option-tables:            true !default;
+$core-option-webtext:           true !default;
+
+// -- Grid
+$core-option-grid:              true !default;
+
+// -- Plugins
+$core-option-buttons:           true !default;
+$core-option-dropdown:          true !default;
+$core-option-isotope:           true !default;
+$core-option-fancybox:          true !default;
+$core-option-font-awesome:      false !default;
+$core-option-font-typicons:     false !default;
+$core-option-map:               true !default;
+$core-option-pagination:        true !default;
+$core-option-popup:             true !default;
+$core-option-prettify:          false !default;
+$core-option-select:            true !default;
+$core-option-slider:            true !default;
+$core-option-tabs:              true !default;
+
+// -- Utility classes
+$core-option-utilities:         true !default;
+
+
+// -- Options
+$core-option-wordpress:         true !default;
+
+// COLORS
+// --------------------------------------------
+
+// -- Default colors
+$gray-base:                     #000 !default;
+$gray-darker:                   lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:                     lighten($gray-base, 20%) !default; // #333
+$gray:                          lighten($gray-base, 33.5%) !default; // #555
+$gray-light:                    lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:                  lighten($gray-base, 93.5%) !default; // #eee
+
+// -- Alert colors
+$color-success:                 #3fbf79 !default;
+$color-info:                    #5bc0de !default;
+$color-warning:                 #ff8a3c !default;
+$color-danger:                  #d9534f !default;
+
+// -- Neutral
+$brand-color-1:                 #EFF1F6 !default;
+$brand-color-2:                 #CFD7E6 !default;
+$brand-color-3:                 #A7B8D1 !default;
+$brand-color-4:                 #4F6A92 !default;
+
+// -- Primary
+$brand-color-5:                 #0C8EFF !default;
+$brand-color-6:                 #0070D2 !default;
+$brand-color-7:                 #005FB2 !default;
+$brand-color-8:                 #00396B !default;
+
+
+// SCAFFHOLDING
+// Settings for some of the most global styles.
+// --------------------------------------------
+
+// -- Body options
+$body-bg:                       #FFF !default; 
+$text-color:                    $brand-color-4 !default;
+
+// -- ::Selected
+$select-brand-background:       $brand-color-8 !default;
+$select-brand-text:    				  $gray-lighter !default; 
+
+// -- Link Default 
+$link-color:                    $brand-color-5 !default;
+$link-color-hover:              $brand-color-4 !default;
+
+$link-decoration:               none !default;
+$link-hover-decoration:         none !default;
+
+
+// TYPOGRAPHY
+// --------------------------------------------
+
+// -- Font Familly
+$font-family-sans-serif:        "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:             "Roboto Slab", Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:         "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+// -- Brand Familly
+$brand-font-1:                  $font-family-sans-serif !default; // For text
+$brand-font-2:                  $font-family-serif !default;
+
+// -- Font Size
+// round($number) - Rounds a number to the nearest whole number.
+// ceil($number)- Rounds a number up to the next whole number.
+// floor($number) - Rounds a number down to the previous whole number.
+$font-size-base:                15px !default;
+$font-size-small:               ceil(($font-size-base * 0.85)) !default;
+$font-size-large:               ceil(($font-size-base * 1.25)) !default;
+
+$font-size-h1:                  floor(($font-size-base * 2.6)) !default;
+$font-size-h2:                  floor(($font-size-base * 2.15)) !default;
+$font-size-h3:                  ceil(($font-size-base * 1.7)) !default;
+$font-size-h4:                  ceil(($font-size-base * 1.25)) !default;
+$font-size-h5:                  ceil(($font-size-base * 1)) !default;
+$font-size-h6:                  ceil(($font-size-base * 0.85)) !default;
+$font-size-p:                		$font-size-base !default;
+
+// -- Line Height
+$line-height:                   1.3333 !default;
+$line-height-computed:          floor($font-size-base * $line-height) !default;
+
+// -- Headings
+$headings-font-family:          $brand-font-2 !default;
+$headings-font-weight:          300 !default;
+$headings-line-height:          1.3 !default;
+$headings-color:                inherit !default;
+
+// -- Font Path
+$font-path:                     "../fonts/" !default;
+$icon-font-path:                "../fonts/icon-fonts/" !default;
+
+
+// WEBTEXT
+// For WYSIWYG.
+// --------------------------------------------
+
+
+
+// COMPONENTS
+// Define common padding and border radius sizes and more.
+// --------------------------------------------
+
+// -- Padding
+$padding-base:                  20px !default;
+$padding-base-vertical:         5px !default;
+$padding-base-horizontal:       10px !default;
+
+// -- Padding variant
+$padding-lg-vertical:           10px !default;
+$padding-lg-horizontal:         15px !default;
+
+$padding-md-vertical:           5px !default;
+$padding-md-horizontal:         10px !default;
+
+$padding-sm-vertical:           3px !default;
+$padding-sm-horizontal:         7px !default;
+
+$padding-xs-vertical:           1px !default;
+$padding-xs-horizontal:         5px !default;
+
+// -- CSS3 default option
+$border-radius-base:            2px !default;
+$transition-base:               ease .2s all !default;
+
+// -- Font size mixin range in utilities
+$font-size-helper-min:          8 !default; // size in px with no-unit
+$font-size-helper-max:          25 !default; // size in px with no-unit
+
+// -- Padding Helper in utilities
+$padding-lg-helper:             30px !default;
+$padding-md-helper:             20px !default;
+$padding-sm-helper:             10px !default;
+$padding-xs-helper:             5px !default;
+
+
+// GRID
+// --------------------------------------------
+
+$grid-columns:                  12 !default;
+$grid-gutter-width:             30px !default;
+
+
+// MEDIA QUERIES breakpoints
+// Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// --------------------------------------------
+
+$screen-xs-min:                 480px !default;
+$screen-sm-min:                 768px !default;
+$screen-md-min:                 992px !default;
+$screen-lg-min:                 1200px !default;
+
+$screen-xs-max:                 ($screen-sm-min - 1) !default;
+$screen-sm-max:                 ($screen-md-min - 1) !default;
+$screen-md-max:                 ($screen-lg-min - 1) !default;
+
+
+// CONTAINER SIZES
+// Define the maximum width of .container for different screen sizes.
+// --------------------------------------------
+
+$container-sm:                  ($grid-gutter-width + 720px) !default;
+$container-md:                  ($grid-gutter-width + 940px) !default;
+$container-lg:                  ($grid-gutter-width + 1140px) !default;
+
+
+// Z-INDEX MASTER
+// --------------------------------------------
+
+$zindex-navbar:                 1000 !default;
+$zindex-dropdown:               1010 !default;
+$zindex-popover:                1060 !default;
+$zindex-tooltip:                1070 !default;
+$zindex-navbar-fixed:           1030 !default;
+$zindex-modal-background:       1040 !default;
+$zindex-modal:                  1050 !default;
+
+// TABLES
+// --------------------------------------------
+
+$table-cell-padding:            5px !default;
+$table-cell-padding-vertical:   $padding-lg-vertical !default;
+$table-cell-padding-horizontal: $padding-md-horizontal !default;
+
+$table-border-color:            $brand-color-1 !default;
+
+$table-bg:                      transparent !default; 
+$table-striped-bg:              lighten($brand-color-1, 3%) !default;
+
+$table-hover-bg:                $brand-color-5 !default;
+$table-hover-color:             #FFF !default;
+
+
+// FORMS
+// --------------------------------------------
+
+// -- Default styles
+$input-bg:                      #fff !default;
+$input-color:                   $brand-color-4 !default;
+$input-padding:                 10px !default;
+
+$input-border:                  1px solid $brand-color-2 !default;
+$input-border-focus:            1px solid $brand-color-5 !default;
+$input-border-radius:           0 !default;
+
+// -- Placeholder
+$input-color-placeholder:       $brand-color-3 !default;
+
+// -- Input container
+$form-group-margin:             10px !default;
+$form-group-margin-inline:      10px !default;
+
+// -- Label
+$label-padding:                 10px 0 5px 0 !default;
+$label-font-weight:             bold !default;
+
+
+// BUTTONS
+// --------------------------------------------
+
+$btn-font-weight:               bold !default;
+$btn-text-transform:            uppercase !default;
+
+$btn-default-padding:           10px 30px !default;
+$btn-default-radius:            4px !default;
+
+$btn-default-color:             #FFF !default;
+$btn-default-bg:                $brand-color-5 !default;
+$btn-default-border:            1px solid $brand-color-5 !default;
+
+$btn-hover-color:               #FFF !default;
+$btn-hover-bg:                  $brand-color-6 !default;
+
+$btn-outline-color:             $brand-color-5 !default;
+$btn-outline-bg:                none !default;
+$btn-outline-border:            1px solid $brand-color-5 !default;
+
+$btn-outline-hover-color:       #FFF !default;
+$btn-outline-hover-bg:          $brand-color-6 !default;
+
+
+// --------------------------------------------
+// PLUGINS
+// --------------------------------------------
+
+
+// -- DROPDOWN
+// --------------------------------------------
+
+$dropdown-bg:                   #FFF !default;
+
+
+// -- FANCYBOX
+// --------------------------------------------
+
+$fancybox-padding:              $padding-base !default;
+$fancybox-error-padding:        50px 50px 0 50px  !default;
+
+// ---- Overlay
+$fancybox-overlay-color:        #FFF !default;
+$fancybox-overlay-opacity:      0.7 !default;
+
+// ---- Loader
+$fancybox-loader-size:          50px !default;
+$fancybox-loader-bg:            $brand-color-8 !default;
+
+// ---- Buttons
+$fancybox-buttons-position:     fixed !default; // fixed out & absolute in
+
+$fancybox-close-color:          #FFF !default;
+$fancybox-close-bg:             $brand-color-5 !default;
+
+$fancybox-nav-color:            #FFF !default;
+$fancybox-nav-bg:               $brand-color-5 !default;
+
+
+// -- FONT-AWESOME
+// --------------------------------------------
+
+$icon-font-path:                "fonts/icon-fonts" !default;
+
+$fa-font-size-base:             $font-size-base !default;
+$fa-line-height-base:           1 !default;
+$fa-css-prefix:                 fa !default;
+$fa-version:                    "4.5.0" !default;
+$fa-border-color:               #eee !default;
+$fa-inverse:                    #fff !default;
+$fa-li-width:                   (30em / 14) !default;
+
+$fa-option-larger:              false !default;
+$fa-option-fixed-width:         false !default;
+$fa-option-list:                false !default;
+$fa-option-bordered-pulled:     false !default;
+$fa-option-animated:            false !default;
+$fa-option-rotated-flipped:     false !default;
+$fa-option-stacked:             false !default;
+
+
+// -- FONT-TYPICONS
+// --------------------------------------------
+
+$typcn-css-prefix:              ft !default;
+
+
+// -- ISOTOPE
+// --------------------------------------------
+
+$mansory-grid-item-padding:     5px !default;
+
+// ---- Number of items per line
+$mansory-grid-item-width:       10 !default;
+
+
+// -- MAP
+// --------------------------------------------
+
+$google-map-width:              100% !default;
+$google-map-height:             300px !default;
+
+
+// -- PAGINATION
+// --------------------------------------------
+
+$pagination-link-padding:       5px 15px !default;
+$pagination-link-hover-bg:      $brand-color-1 !default;
+
+
+// -- POPUP
+// --------------------------------------------
+
+$popup-bg:                   #FFF !default;
+
+
+// -- SUMO SELECT
+// --------------------------------------------
+
+$select-options-bg:             #FFF !default;
+
+$select-disabled-bg:            #FFF !default;
+$select-disabled-color:         $brand-color-3 !default;
+
+$select-selected-bg:            #FFF !default;
+$select-selected-color:         $brand-color-5 !default;
+
+$select-hover-bg:               $brand-color-1 !default;
+$select-hover-color:            $brand-color-4 !default;
+
+
+// -- SLIDER
+// --------------------------------------------
+$slider-padding-item: 10px !default;
+
+
+// -- TABS
+// --------------------------------------------
+
+// ---- Navigation
+$tabs-nav-padding:              $padding-base !default;
+$tabs-nav-color:                $brand-color-5 !default;
+
+// ---- Navigation active
+$tabs-nav-active-color:         $brand-color-8 !default;
+
+// ---- Panel
+$tabs-panel-padding:            $padding-base !default;
+$tabs-panel-color:              $brand-color-4 !default;
